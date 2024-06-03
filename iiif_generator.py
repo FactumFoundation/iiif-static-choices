@@ -116,7 +116,7 @@ if __name__ == "__main__":
         "-i",
         "--identifier",
         type=str,
-        default="http://0.0.0.0:8000/iiif/",
+        default="http://127.0.0.1:8000/iiif/",
         help="Set the identifier in the info.json. The default is http://0.0.0.0:8000/iiif"
     )
 
@@ -188,7 +188,7 @@ if __name__ == "__main__":
         "-s",
         "--host_name",
         type=str,
-        default="http://0.0.0.0:8000",
+        default="http://127.0.0.1:8000",
         help="Host name for the URL/URIs in the manifest"
     )
 
