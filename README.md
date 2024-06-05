@@ -54,7 +54,7 @@ For this quick guide we'll be using the existing example images and manifest-con
 3. Run the basic server application as follows:
 
     ```bash
-    poetry run python server 8000
+    poetry run python server.py 8000
     ```
 
 Using your own images and manifest-config.yml
