@@ -82,3 +82,93 @@ Todo
 - add in logo generation
 - add in multi-page manifests
 - add some unit tests to prevent development breaking
+
+
+
+Advanced instructions
+===
+
+### IIIF Generator: `tiles` Command Parameters
+
+The `iiif_generator.py tiles` command is used to generate IIIF image tiles from a directory of input images. Below is a detailed description of all available parameters:
+
+#### **Available Parameters**
+
+##### 1. `-i`, `--identifier`
+- Type: `str`
+- Default Value: `http://0.0.0.0:8000/iiif/`
+- Description: Sets the identifier in the `info.json` file generated for each IIIF image. This identifier serves as the base URL for accessing the generated tiles.
+
+##### 2. `-z`, `--zoom_levels`
+- Type: `int`
+- Default Value: `5`
+- Description: Specifies the number of zoom levels generated for each image. A higher value results in more detailed zoom levels, increasing storage requirements.
+
+##### 3. `-v`, `--version`
+- Type: `str`
+- Default Value: `2.1.1`
+- Options: `2.1.1` or `3.0`
+- Description: Defines the IIIF image API version used for generating tiles. Version `3.0` follows the latest IIIF specifications, while `2.1.1` is a widely used stable version.
+
+##### 4. `-t`, `--tile_size`
+- Type: `int`
+- Default Value: `1024`
+- Description: Specifies the tile size in pixels. The images will be divided into square tiles of this dimension.
+
+##### 5. `-o`, `--output`
+- Type: `str`
+- Default Value: `iiif`
+- Description: Defines the directory where the generated IIIF image tiles will be stored. By default, they are saved in the `iiif/` directory.
+
+##### 6. `-d`, `--input_directory`
+- Type: `str`
+- Default Value: `image`
+- Description: Specifies the input directory where the original images to be tiled are located. Supported image formats include `.png`, `.jpg`, and `.webp`.
+
+---
+
+#### **Usage Example**
+
+``` bash
+poetry run python iiif_generator.py tiles -i http://127.0.0.1:8000/iiif/ -z 5 -v 3.0 -t 256 -o iiif -d image
+```
+
+### IIIF Generator: `manifest` Command Parameters
+
+The `iiif_generator.py manifest` command is used to generate a **IIIF manifest** from a directory of images and a YAML configuration file. Below is a detailed description of all available parameters:
+
+#### **Available Parameters**
+
+##### 1. `-o`, `--output`
+- Type: `str`
+- Default Value: `manifest.json`
+- Description: Specifies the output file name for the generated IIIF manifest. By default, the manifest is saved as `/iiif/manifest/manifest.json`.
+
+##### 2. `-d`, `--input_directory`
+- Type: `str`
+- Default Value: `image`
+- Description: Defines the directory where the images to be included in the manifest are located. 
+
+##### 3. `-f`, `--file_name`
+- Type: `str`
+- Required: `True`
+- Description: Specifies the **YAML configuration file** that contains metadata and structure details for the manifest. This file is essential for generating a valid IIIF manifest.
+
+##### 4. `-s`, `--host_name`
+- Type: `str`
+- Default Value: `http://0.0.0.0:8000`
+- Description: Defines the base **host URL** that will be used in all URIs within the generated manifest.
+
+---
+
+#### **Usage Example**
+``` bash
+poetry run python iiif_generator.py manifest -o pyritised-ammonite.json -d image -f ammonite-config.yml  -s http://127.0.0.1:8000 
+```
+
+IIIF REFERENCES AND EXAMPLES
+===
+- [Introduction to IIIF](https://training.iiif.io/intro-to-iiif/)
+- [Documentation and workshop materials for IIIF training](https://training.iiif.io/)
+- [Online example on Factum's server](https://highres.factumfoundation.xyz/iiif/index.html)
+
