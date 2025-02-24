@@ -166,7 +166,7 @@ The `iiif_generator.py manifest` command is used to generate a **IIIF manifest**
 poetry run python iiif_generator.py manifest -o pyritised-ammonite.json -d image -f ammonite-config.yml  -s http://127.0.0.1:8000 
 ```
 
-IIIF REFERENCES AND EXAMPLES (test)
+IIIF REFERENCES AND EXAMPLES
 ===
 - [Introduction to IIIF](https://training.iiif.io/intro-to-iiif/)
 - [Documentation and workshop materials for IIIF training](https://training.iiif.io/)
