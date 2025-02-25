@@ -177,4 +177,5 @@ IIIF REFERENCES AND EXAMPLES
 - [Introduction to IIIF](https://training.iiif.io/intro-to-iiif/)
 - [Documentation and workshop materials for IIIF training](https://training.iiif.io/)
 - [Online example on Factum's server](https://highres.factumfoundation.xyz/iiif/index.html)
+- [IIIF Tiler from Glen Robson](https://github.com/glenrobson/iiif-tiler)
 
