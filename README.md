@@ -165,12 +165,7 @@ The `iiif_generator.py manifest` command is used to generate a **IIIF manifest**
 ``` bash
 poetry run python iiif_generator.py manifest -o pyritised-ammonite.json -d image -f ammonite-config.yml  -s http://127.0.0.1:8000 
 ```
-### Server
-``` bash
-poetry run python iiif_generator.py manifest -o ceramics.json -d image -f ceramics-config.yml  -s https://highres.factumfoundation.xyz
 
-poetry run python iiif_generator.py tiles -i https://highres.factumfoundation.xyz/iiif/ -z 5 -v 3.0 -t 1024 -o iiif -d image
-```
 
 IIIF REFERENCES AND EXAMPLES
 ===
